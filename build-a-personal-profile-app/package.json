@@ -1,0 +1,14 @@
+{
+  "name": "build-a-personal-profile-app",
+  "version": "1.0.0",
+  "description": "Camper Bot's personal profile app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["express", "profile"],
+  "license": "MIT",
+  "dependencies": {
+    "express": "5.2.1"
+  }
+}
