@@ -13,6 +13,20 @@ app.get("/", (_req, res) => {
 
 // Do not change code above this line
 
+const handler = (req, res) => {
+  const { date } = req.params;
+  const d = !date
+    ? new Date()
+    : /^-?\d+$/.test(date)
+      ? new Date(Number(date))
+      : new Date(date);
+  if (isNaN(d.getTime())) return res.json({ error: "Invalid Date" });
+  res.json({ unix: d.getTime(), utc: d.toUTCString() });
+};
+
+app.get("/api", handler);
+app.get("/api/:date", handler);
+
 // Do not change code below this line
 
 const PORT = 8000;
